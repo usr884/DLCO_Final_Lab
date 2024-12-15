@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Sun Dec 15 13:29:28 2024
+| Date         : Sun Dec 15 14:38:26 2024
 | Host         : ubu running 64-bit Ubuntu 24.04.1 LTS
 | Command      : report_methodology -file Top_Module_methodology_drc_routed.rpt -pb Top_Module_methodology_drc_routed.pb -rpx Top_Module_methodology_drc_routed.rpx
 | Design       : Top_Module

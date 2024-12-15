@@ -45,7 +45,7 @@ module keyboard(
     read_32bit key_read(.memop(memop), .rdaddr(rdaddr[1:0]), .dataout(dataout), .rddata(keyboard_read));
 
     assign buffer_read = buffer[buffer_head];
-    assign keyboard_addr_valid = (rdaddr == 32'h00300000) ? 1'b1 : 1'b0;
+    assign keyboard_addr_valid = (rdaddr == 28'h0030000) ? 1'b1 : 1'b0;
     always @ (posedge rdclk) begin
         if(keyboard_rst) begin
             buffer_head <= 5'b0;
