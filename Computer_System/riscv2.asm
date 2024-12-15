@@ -1,0 +1,31 @@
+li	a5,2097152
+li	a4,72
+sb	a4,0(a5)
+li	a4,101
+sb	a4,1(a5)
+li	a4,108
+sb	a4,2(a5)
+li	a4,108
+sb	a4,3(a5)
+li	a4,111
+sb	a4,4(a5)
+li	a4,44
+sb	a4,5(a5)
+li	a4,32
+sb	a4,6(a5)
+li	a4,119
+sb	a4,7(a5)
+li	a4,111
+sb	a4,8(a5)
+li	a4,114
+sb	a4,9(a5)
+li	a4,108
+sb	a4,10(a5)
+li	a4,100
+sb	a4,11(a5)
+li	a4,33
+sb	a4,12(a5)
+sb	zero,13(a5)
+.L2:
+nop
+j	.L2

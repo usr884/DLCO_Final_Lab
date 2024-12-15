@@ -1,0 +1,26 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+senddata = r, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = i, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = @, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 2, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 
+, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 4, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 9, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 7, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 1, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 3, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = 0, UARTstate =  0, dbgdata = xxxXxxxx
+senddata = q, UARTstate =  0, dbgdata = xxxXxxxx
+$stop called at time : 14582 ns : File "/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sim_1/new/uart_test.v" Line 70

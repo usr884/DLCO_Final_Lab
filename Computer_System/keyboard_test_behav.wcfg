@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="uart_test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="uart_test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="14780001fs"></ZoomEndTime>
+      <Cursor1Time time="400000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="160"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject type="logic" fp_name="/uart_test/uart_for_test/rxd_out">
+      <obj_property name="ElementShortName">rxd_out</obj_property>
+      <obj_property name="ObjectShortName">rxd_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/uart_test/uart_for_test/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_test/uart_for_test/rx_head">
+      <obj_property name="ElementShortName">rx_head[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_head[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_test/uart_for_test/rx_tail">
+      <obj_property name="ElementShortName">rx_tail[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_tail[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/uart_test/uart_for_test/rx_ready">
+      <obj_property name="ElementShortName">rx_ready</obj_property>
+      <obj_property name="ObjectShortName">rx_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/uart_test/uart_for_test/rx_module/rx_finish">
+      <obj_property name="ElementShortName">rx_finish</obj_property>
+      <obj_property name="ObjectShortName">rx_finish</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_test/uart_for_test/rx_module/rx_count">
+      <obj_property name="ElementShortName">rx_count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_count[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_test/uart_for_test/rx_module/rx_buf">
+      <obj_property name="ElementShortName">rx_buf[10:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_buf[10:0]</obj_property>
+   </wvobject>
+</wave_config>

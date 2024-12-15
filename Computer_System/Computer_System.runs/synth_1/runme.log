@@ -1,0 +1,457 @@
+
+*** Running vivado
+    with args -log Top_Module.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Module.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source Top_Module.tcl -notrace
+Command: synth_design -top Top_Module -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 377360
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2311.344 ; gain = 0.000 ; free physical = 2046 ; free virtual = 14120
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_Module' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/Top_Module.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'rv32ip' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/rv32ip.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg_if' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_if.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'seg_if' (2#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_if.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg_id' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_id.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ctrl' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/ctrl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl' (3#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/ctrl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'seg_id' (4#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_id.v:23]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/reg_file.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (5#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/reg_file.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg_ex' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_ex.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:2]
+INFO: [Synth 8-6157] synthesizing module 'adder_32' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:33]
+INFO: [Synth 8-6157] synthesizing module 'adder_16' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:48]
+INFO: [Synth 8-6157] synthesizing module 'adder_4' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:61]
+INFO: [Synth 8-6157] synthesizing module 'FA' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'FA' (6#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:75]
+INFO: [Synth 8-6157] synthesizing module 'CLU' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'CLU' (7#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'adder_4' (8#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:61]
+INFO: [Synth 8-6155] done synthesizing module 'adder_16' (9#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'adder_32' (10#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:33]
+INFO: [Synth 8-6157] synthesizing module 'barrel' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:94]
+INFO: [Synth 8-6155] done synthesizing module 'barrel' (11#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:94]
+INFO: [Synth 8-226] default block is never used [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (12#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/alu.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'seg_ex' (13#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_ex.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg_mem' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_mem.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'seg_mem' (14#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_mem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg_wb' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_wb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'seg_wb' (15#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/seg_wb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'forward_unit' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/forward_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'forward_unit' (16#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/forward_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'rv32ip' (17#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/CPU/rv32ip.v:23]
+INFO: [Synth 8-6157] synthesizing module 'imem' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/imem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_1' [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_1' (18#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'imem' (19#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/imem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'bus' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/bus.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'bus' (20#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/bus.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dmem' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/dmem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (21#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dmem' (22#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/dmem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'VGA' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/VGA.v:23]
+INFO: [Synth 8-6157] synthesizing module 'write_32bit' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/write_32bit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'write_32bit' (23#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/write_32bit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_2' [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/blk_mem_gen_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_2' (24#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/.Xil/Vivado-377325-ubu/realtime/blk_mem_gen_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'low_freq_clk' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/low_freq_clk.v:23]
+	Parameter clk_freq bound to: 1 - type: integer 
+	Parameter countlimit bound to: 49999999 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'low_freq_clk' (25#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/low_freq_clk.v:23]
+INFO: [Synth 8-6157] synthesizing module 'vga_ctrl' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/VGA.v:148]
+	Parameter h_frontporch bound to: 96 - type: integer 
+	Parameter h_active bound to: 144 - type: integer 
+	Parameter h_backporch bound to: 720 - type: integer 
+	Parameter h_total bound to: 800 - type: integer 
+	Parameter v_frontporch bound to: 2 - type: integer 
+	Parameter v_active bound to: 35 - type: integer 
+	Parameter v_backporch bound to: 515 - type: integer 
+	Parameter v_total bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_ctrl' (26#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/VGA.v:148]
+INFO: [Synth 8-6157] synthesizing module 'vga_font' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/VGA.v:133]
+INFO: [Synth 8-3876] $readmem data file '../../../../vga_font.txt' is read successfully [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/VGA.v:142]
+INFO: [Synth 8-6155] done synthesizing module 'vga_font' (27#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/VGA.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'VGA' (28#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/VGA.v:23]
+INFO: [Synth 8-6157] synthesizing module 'keyboard' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/keyboard.v:23]
+INFO: [Synth 8-3876] $readmem data file '../../../../scancode.txt' is read successfully [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/keyboard.v:83]
+INFO: [Synth 8-6157] synthesizing module 'read_32bit' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/read_32bit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'read_32bit' (29#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/read_32bit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ps2_keyboard' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/keyboard.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'ps2_keyboard' (30#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/keyboard.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'keyboard' (31#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/keyboard.v:23]
+INFO: [Synth 8-6157] synthesizing module 'LED' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/LED.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'LED' (32#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/LED.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SSD' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg7_display' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:57]
+INFO: [Synth 8-6157] synthesizing module 'low_freq_clk__parameterized0' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/low_freq_clk.v:23]
+	Parameter clk_freq bound to: 1000 - type: integer 
+	Parameter countlimit bound to: 49999 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'low_freq_clk__parameterized0' (32#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/low_freq_clk.v:23]
+INFO: [Synth 8-226] default block is never used [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'seg7_display' (33#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'SSD' (34#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:23]
+INFO: [Synth 8-6157] synthesizing module 'timer' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/timer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'low_freq_clk__parameterized1' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/low_freq_clk.v:23]
+	Parameter clk_freq bound to: 1000000 - type: integer 
+	Parameter countlimit bound to: 49 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'low_freq_clk__parameterized1' (34#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/low_freq_clk.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'timer' (35#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/timer.v:23]
+INFO: [Synth 8-6157] synthesizing module 'switch' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/switch.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'switch' (36#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/switch.v:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_port' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/uart_port.v:23]
+INFO: [Synth 8-6157] synthesizing module 'serial_tx' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/serial_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clkgen' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/clkgen.v:23]
+	Parameter clk_freq bound to: 115200 - type: integer 
+	Parameter countlimit bound to: 433 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'clkgen' (37#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/clkgen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'serial_tx' (38#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/serial_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'serial_rx' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/serial_rx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'serial_rx' (39#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/serial_rx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'uart_port' (40#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/imports/uart_debug/uart_port.v:23]
+INFO: [Synth 8-6157] synthesizing module 'seg7_display_number' [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:90]
+INFO: [Synth 8-226] default block is never used [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:111]
+INFO: [Synth 8-226] default block is never used [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:132]
+INFO: [Synth 8-6155] done synthesizing module 'seg7_display_number' (41#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Module' (42#1) [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/Top_Module.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2311.344 ; gain = 0.000 ; free physical = 2639 ; free virtual = 14714
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2311.344 ; gain = 0.000 ; free physical = 2654 ; free virtual = 14729
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2311.344 ; gain = 0.000 ; free physical = 2654 ; free virtual = 14729
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2311.344 ; gain = 0.000 ; free physical = 2654 ; free virtual = 14729
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2/blk_mem_gen_2_in_context.xdc] for cell 'device_VGA/ch_video_memory'
+Finished Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2/blk_mem_gen_2_in_context.xdc] for cell 'device_VGA/ch_video_memory'
+Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'data_mem/blk_datamem'
+Finished Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'data_mem/blk_datamem'
+Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'instrucion_mem/blk_instmem'
+Finished Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'instrucion_mem/blk_instmem'
+Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'mycpuclk'
+Finished Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'mycpuclk'
+Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Module_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2375.297 ; gain = 0.000 ; free physical = 2568 ; free virtual = 14644
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2375.297 ; gain = 0.000 ; free physical = 2568 ; free virtual = 14644
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'device_VGA/ch_video_memory' at clock pin 'clkb' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2673 ; free virtual = 14749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2673 ; free virtual = 14749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for device_VGA/ch_video_memory. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for data_mem/blk_datamem. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for instrucion_mem/blk_instmem. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mycpuclk. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2673 ; free virtual = 14749
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2705 ; free virtual = 14782
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 3     
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 12    
+	   2 Input    3 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 32    
+	   2 Input      1 Bit         XORs := 2     
++---XORs : 
+	                9 Bit    Wide XORs := 2     
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	              159 Bit    Registers := 1     
+	               75 Bit    Registers := 1     
+	               71 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 42    
+	               16 Bit    Registers := 2     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 3     
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 10    
+	                3 Bit    Registers := 5     
+	                1 Bit    Registers := 19    
++---RAMs : 
+	              256 Bit	(32 X 8 bit)          RAMs := 1     
+	              128 Bit	(16 X 8 bit)          RAMs := 2     
++---Muxes : 
+	   3 Input  159 Bit        Muxes := 1     
+	   2 Input  159 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 59    
+	   9 Input   32 Bit        Muxes := 1     
+	  11 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 15    
+	   3 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 3     
+	   5 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 5     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 6     
+	   2 Input   10 Bit        Muxes := 4     
+	   4 Input    8 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 19    
+	 257 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 2     
+	  13 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 3     
+	   8 Input    4 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 11    
+	   7 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 5     
+	   4 Input    3 Bit        Muxes := 3     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 102   
+	  11 Input    1 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 10    
+	   3 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 21    
+	   5 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Why this net has no driver: _order_recur <const0>
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2770 ; free virtual = 14849
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|vga_font    | p_0_out    | 4096x10       | LUT            | 
+|VGA         | p_0_out    | 4096x10       | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++----------------+------------+-----------+----------------------+-------------+
+|Module Name     | RTL Object | Inference | Size (Depth x Width) | Primitives  | 
++----------------+------------+-----------+----------------------+-------------+
+|device_keyboard | buffer_reg | Implied   | 32 x 8               | RAM32M x 2	 | 
+|uart_debug      | rx_buf_reg | Implied   | 16 x 8               | RAM32M x 2	 | 
+|uart_debug      | tx_buf_reg | Implied   | 16 x 8               | RAM32M x 2	 | 
++----------------+------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2676 ; free virtual = 14757
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2629 ; free virtual = 14710
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++----------------+------------+-----------+----------------------+-------------+
+|Module Name     | RTL Object | Inference | Size (Depth x Width) | Primitives  | 
++----------------+------------+-----------+----------------------+-------------+
+|device_keyboard | buffer_reg | Implied   | 32 x 8               | RAM32M x 2	 | 
+|uart_debug      | rx_buf_reg | Implied   | 16 x 8               | RAM32M x 2	 | 
+|uart_debug      | tx_buf_reg | Implied   | 16 x 8               | RAM32M x 2	 | 
++----------------+------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2596 ; free virtual = 14680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2598 ; free virtual = 14680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2598 ; free virtual = 14680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2598 ; free virtual = 14680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2598 ; free virtual = 14680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2599 ; free virtual = 14681
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2599 ; free virtual = 14681
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |blk_mem_gen_0 |         1|
+|3     |blk_mem_gen_2 |         1|
+|4     |blk_mem_gen_1 |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |blk_mem_gen |     3|
+|4     |clk_wiz     |     1|
+|5     |BUFG        |     3|
+|6     |CARRY4      |    68|
+|7     |LUT1        |    17|
+|8     |LUT2        |    92|
+|9     |LUT3        |   299|
+|10    |LUT4        |   232|
+|11    |LUT5        |   527|
+|12    |LUT6        |  1721|
+|13    |MUXF7       |   462|
+|14    |MUXF8       |   214|
+|15    |RAM32M      |     6|
+|16    |FDCE        |    58|
+|17    |FDPE        |     3|
+|18    |FDRE        |  1850|
+|19    |FDSE        |    26|
+|20    |IBUF        |     4|
+|21    |OBUF        |    54|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2599 ; free virtual = 14681
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2375.297 ; gain = 0.000 ; free physical = 2616 ; free virtual = 14698
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2375.297 ; gain = 63.953 ; free physical = 2616 ; free virtual = 14698
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2375.297 ; gain = 0.000 ; free physical = 2712 ; free virtual = 14794
+INFO: [Netlist 29-17] Analyzing 750 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2375.297 ; gain = 0.000 ; free physical = 2723 ; free virtual = 14804
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+110 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2375.297 ; gain = 64.031 ; free physical = 2883 ; free virtual = 14963
+INFO: [Common 17-1381] The checkpoint '/home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/Top_Module.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_Module_utilization_synth.rpt -pb Top_Module_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 15 13:25:04 2024...
