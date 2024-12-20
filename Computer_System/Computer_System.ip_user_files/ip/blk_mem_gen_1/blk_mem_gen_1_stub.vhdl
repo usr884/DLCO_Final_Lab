@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sun Dec 15 11:27:30 2024
+-- Date        : Sun Dec 15 16:09:00 2024
 -- Host        : ubu running 64-bit Ubuntu 24.04.1 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_stub.vhdl

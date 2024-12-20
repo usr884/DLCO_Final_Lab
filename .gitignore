@@ -1,0 +1,15 @@
+*.*
+*
+!.gitignore
+!/Computer_System/Computer_System.cache/*
+!Computer_System/Computer_System.gen/*
+!Computer_System/Computer_System.hw/*
+!Computer_System/Computer_System.ip_user_files/*
+!Computer_System/Computer_System.runs/*
+!Computer_System/Computer_System.sim/*
+!Computer_System/Computer_System.srcs/*
+!Computer_System/Computer_System.xpr
+!Computer_System/hex_to_coe.sh
+!Computer_System/keyboard_test_behav.wcfg
+!Computer_System/scancode.txt
+!Computer_System/vga_font.txt

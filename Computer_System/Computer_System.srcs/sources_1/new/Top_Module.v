@@ -54,6 +54,7 @@ module Top_Module(
     wire [2:0] memop;
     wire memwe;
     wire [31:0] cpudbgdata;
+    wire memrd;
 
     wire datamem_we;
     wire VGA_we;
@@ -77,12 +78,17 @@ module Top_Module(
     wire [7:0] debug_AN;
     wire [7:0] run_SEG;
     wire [7:0] run_AN;
+    wire [31:0] kbddbgdata;
+    wire [7:0] kbddebug_SEG;
+    wire [7:0] kbddebug_AN;
+    wire kbddebug;
+    assign kbddbg = 1'b0;
 
     clk_wiz_0 mycpuclk(.clk_in1(CLK100MHZ), .clk_out1(cpuclk), .clk_out2(vgaclk));
     
     rv32ip rv32ip_cpu(.clock(cpuclk & ~uart_halt), .reset(rst | uart_rst), .imemaddr(imemaddr), .imemdataout(imemdataout), .imemclk(imemclk), 
         .dmemaddr(mem_addr), .dmemdataout(mem_data_read), .dmemdatain(mem_data_write), .dmemrdclk(memrdclk), .dmemwrclk(memwrclk),
-        .dmemop(memop), .dmemwe(memwe), .cpudbgdata(cpudbgdata));
+        .dmemop(memop), .dmemwe(memwe), .cpudbgdata(cpudbgdata), .memrd(memrd));
 
     imem instrucion_mem(.clk(uart_halt ? ~cpuclk : imemclk), .addr(uart_halt ? uart_iaddr : imemaddr), .datain(uart_idata), 
         .dataout(imemdataout), .we(uart_iwe & uart_halt));
@@ -98,16 +104,16 @@ module Top_Module(
     VGA device_VGA(.wrclk(memwrclk), .we(VGA_we), .memop(memop), .wraddr(mem_addr), .datain(mem_data_write), .video_mem_rdclk(CLK100MHZ), 
         .vgaclk(vgaclk), .vgarst(rst), .VGA_R(VGA_R), .VGA_G(VGA_G), .VGA_B(VGA_B), .VGA_HS(VGA_HS), .VGA_VS(VGA_VS));
 
-    keyboard device_keyboard(.rdclk(memrdclk), .memop(memop), .rdaddr(mem_addr), .PS2_CLK(PS2_CLK), .PS2_DATA(PS2_DATA), 
-        .keyboard_wrclk(CLK100MHZ), .keyboard_rst(rst), .keyboard_read(keyboard_read));
+    keyboard device_keyboard(.rdclk(memrdclk), .memrd(memrd), .memop(memop), .rdaddr(mem_addr), .PS2_CLK(PS2_CLK), .PS2_DATA(PS2_DATA), 
+        .keyboard_wrclk(CLK100MHZ), .keyboard_rst(rst), .keyboard_read(keyboard_read), .kbddbgdata(kbddbgdata));
 
     LED device_LED(.wrclk(memwrclk), .we(LED_we), .memop(memop), .wraddr(mem_addr), .datain(mem_data_write), .LED(LED), 
         .LED16_B(LED16_B), .LED16_G(LED16_G), .LED16_R(LED16_R), .LED17_B(LED17_B), .LED17_G(LED17_G), .LED17_R(LED17_R));
 
     SSD device_SSD(.wrclk(memwrclk), .we(SSD_we), .memop(memop), .wraddr(mem_addr), .datain(mem_data_write), .SSD_clk(CLK100MHZ), 
         .SEG(run_SEG), .AN(run_AN));
-    assign SEG = uart_halt ? debug_SEG : run_SEG;
-    assign AN = uart_halt ? debug_AN : run_AN;
+    assign SEG = uart_halt ? debug_SEG : (kbddbg ? kbddebug_SEG : run_SEG);
+    assign AN = uart_halt ? debug_AN : (kbddbg ? kbddebug_AN : run_AN);
 
     timer device_timer(.rdclk(memrdclk), .memop(memop), .rdaddr(mem_addr), .timer_clk(CLK100MHZ), .timer_rst(rst), .timer_read(timer_read));
 
@@ -118,6 +124,8 @@ module Top_Module(
         .cpuhalt(uart_halt), .cpureset(uart_rst));
     assign UART_CTS = 1'b0;
     seg7_display_number debug_SSD(.clk(CLK100MHZ), .en(8'hff), .data(uartdbgdata), .seg_7seg(debug_SEG), .sel_7seg(debug_AN));
+
+    seg7_display_number debug_SSD2(.clk(CLK100MHZ), .en(8'hff), .data(kbddbgdata), .seg_7seg(kbddebug_SEG), .sel_7seg(kbddebug_AN));
 
     /*assign uartdbgdata = 32'b0;
     assign uart_iaddr = 32'b0;

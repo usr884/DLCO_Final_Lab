@@ -82,6 +82,9 @@ module VGA_test();
         VGAinput(0, 32'h20000c, 33);
         VGAinput(0, 32'h20000d, 0);
 
+        VGAinput(3'b000, 32'h00201001, 8'h12);
+        VGAinput(3'b000, 32'h00201002, 8'h13);
+
         #20 
         we = 1'b0;
         // wraddr = 32'b0;
@@ -98,6 +101,8 @@ module VGA_test();
                 $display("%c at 0x%h", VGA_for_test.ascii, i);
             end
         end
+        $display("cursor_y = 0x%h", VGA_for_test.cursor_y);
+        $display("cursor_x = 0x%h", VGA_for_test.cursor_x);
         $stop;
     end
 endmodule

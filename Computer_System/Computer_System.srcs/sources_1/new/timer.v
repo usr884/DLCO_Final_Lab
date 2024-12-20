@@ -33,7 +33,7 @@ module timer(
     wire timer_addr;
     reg [63:0] timerstate;
     reg [31:0] dataout;
-    assign timer_addr_valid = (rdaddr[31:4] == 28'h0070000 && rdaddr[3] == 1'b0) ? 1'b1 : 1'b0;
+    assign timer_addr_valid = (rdaddr[31:4] == 28'h0060000 && rdaddr[3] == 1'b0) ? 1'b1 : 1'b0;
     assign timer_addr = rdaddr[2];
     always @ (posedge rdclk) begin
         if(timer_addr_valid) begin

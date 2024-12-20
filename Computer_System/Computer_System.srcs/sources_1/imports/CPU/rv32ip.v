@@ -33,7 +33,8 @@ module rv32ip(
 	output	dmemwrclk,
 	output [2:0] dmemop,
 	output	dmemwe,
-	output [31:0] cpudbgdata
+	output [31:0] cpudbgdata,
+        output memrd
     );
 
     assign imemclk = clock;
@@ -83,4 +84,6 @@ module rv32ip(
     forward_unit forward_unit_0(.rst(reset), .ex_rs1(id_ex[142:138]), .ex_rs2(id_ex[137:133]), .wb_rd(wb_fw_rd), 
                 .mem_rd(mem_fw_rd), .mem_read(mem_is_read), .rs1sel(rs1sel), .rs2sel(rs2sel), .stallIF(stallIF), 
                 .stallID(stallID), .stallEX(stallEX), .flushEX(flushEX));
+
+    assign memrd = ex_mem[74] & ex_mem[73];
 endmodule

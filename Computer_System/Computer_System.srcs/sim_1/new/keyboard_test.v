@@ -62,8 +62,8 @@ module keyboard_test;
         model.kbd_sendcode(8'h1B); // release 'S'
         #20;
 
-        memop = 3'b010;
-        rdaddr = 32'h00300000;
+        memop = 3'b000;
+        rdaddr = 32'h00300001;
         $display("head=%d, tail=%d", keyboard_for_test.buffer_head, keyboard_for_test.buffer_tail);
         #10 rdclk = 1'b1;
         #1 $display("%h", keyboard_read);

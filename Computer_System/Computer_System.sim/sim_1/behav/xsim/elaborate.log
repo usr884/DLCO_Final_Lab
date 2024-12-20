@@ -1,6 +1,6 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 44c2a2a361594362a2e55c426fc3092e --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uart_test_behav xil_defaultlib.uart_test xil_defaultlib.glbl -log elaborate.log 
+Running: /opt/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 44c2a2a361594362a2e55c426fc3092e --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot timer_test_behav xil_defaultlib.timer_test xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -8,11 +8,9 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.clkgen(clk_freq=115200)
-Compiling module xil_defaultlib.serial_tx
-Compiling module xil_defaultlib.serial_rx
-Compiling module xil_defaultlib.uart_port
-Compiling module xil_defaultlib.uart_port_model
-Compiling module xil_defaultlib.uart_test
+Compiling module xil_defaultlib.read_32bit
+Compiling module xil_defaultlib.low_freq_clk(clk_freq=1000000)
+Compiling module xil_defaultlib.timer
+Compiling module xil_defaultlib.timer_test
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot uart_test_behav
+Built simulation snapshot timer_test_behav
