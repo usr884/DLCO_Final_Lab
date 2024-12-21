@@ -63,27 +63,42 @@ module VGA_test();
         we = 1'b1;
         wrclk = 1'b0;
         #5;
-        VGAinput(3'b000, 32'h00201000, 8'h00);
-        VGAinput(3'b000, 32'h00201001, 8'hff);
-        VGAinput(3'b000, 32'h00201002, 8'hff);
+        VGAinput(3'b000, 32'h00200000, 8'h00);
+        VGAinput(3'b000, 32'h00200001, 8'hff);
+        VGAinput(3'b000, 32'h00200002, 8'hff);
         // "Hello, world!\0"
-        VGAinput(0, 32'h200000, 72);
-        VGAinput(0, 32'h200001, 101);
-        VGAinput(0, 32'h200002, 108);
-        VGAinput(0, 32'h200003, 108);
-        VGAinput(0, 32'h200004, 111);
-        VGAinput(0, 32'h200005, 44);
-        VGAinput(0, 32'h200006, 32);
-        VGAinput(0, 32'h200007, 119);
-        VGAinput(0, 32'h200008, 111);
-        VGAinput(0, 32'h200009, 114);
-        VGAinput(0, 32'h20000a, 108);
-        VGAinput(0, 32'h20000b, 100);
-        VGAinput(0, 32'h20000c, 33);
-        VGAinput(0, 32'h20000d, 0);
+        VGAinput(0, 32'h201000, 72);
+        VGAinput(0, 32'h201001, 101);
+        VGAinput(0, 32'h201002, 108);
+        VGAinput(0, 32'h201003, 108);
+        VGAinput(0, 32'h201004, 111);
+        VGAinput(0, 32'h201005, 44);
+        VGAinput(0, 32'h201006, 32);
+        VGAinput(0, 32'h201007, 119);
+        VGAinput(0, 32'h201008, 111);
+        VGAinput(0, 32'h201009, 114);
+        VGAinput(0, 32'h20100a, 108);
+        VGAinput(0, 32'h20100b, 100);
+        VGAinput(0, 32'h20100c, 33);
+        VGAinput(0, 32'h20100d, 0);
 
-        VGAinput(3'b000, 32'h00201001, 8'h12);
-        VGAinput(3'b000, 32'h00201002, 8'h13);
+        VGAinput(0, 32'h202000, 8'h01);
+        VGAinput(0, 32'h202001, 8'h02);
+        VGAinput(0, 32'h202002, 8'h03);
+        VGAinput(0, 32'h202003, 8'h04);
+        VGAinput(0, 32'h202004, 8'h05);
+        VGAinput(0, 32'h202005, 8'h06);
+        VGAinput(0, 32'h202006, 8'h07);
+        VGAinput(0, 32'h202007, 8'h08);
+        VGAinput(0, 32'h202008, 8'h09);
+        VGAinput(0, 32'h202009, 8'h0a);
+        VGAinput(0, 32'h20200a, 8'h0b);
+        VGAinput(0, 32'h20200b, 8'h0c);
+        VGAinput(0, 32'h20200c, 8'h0d);
+        VGAinput(0, 32'h20200d, 8'h0e);
+
+        VGAinput(3'b000, 32'h00200001, 8'h12);
+        VGAinput(3'b000, 32'h00200002, 8'h13);
 
         #20 
         we = 1'b0;
@@ -99,6 +114,7 @@ module VGA_test();
                     #10; // $display("%c at 0x%h", VGA_for_test.ascii, i);
                 end
                 $display("%c at 0x%h", VGA_for_test.ascii, i);
+                $display("%02h at 0x%h", VGA_for_test.ch_color_true, i);
             end
         end
         $display("cursor_y = 0x%h", VGA_for_test.cursor_y);

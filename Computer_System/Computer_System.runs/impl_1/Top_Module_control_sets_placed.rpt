@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Dec 18 11:56:28 2024
+| Date         : Sat Dec 21 17:27:54 2024
 | Host         : ubu running 64-bit Ubuntu 24.04.1 LTS
 | Command      : report_control_sets -verbose -file Top_Module_control_sets_placed.rpt
 | Design       : Top_Module
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |   102 |
-|    Minimum number of control sets                        |   102 |
+| Total control sets                                       |   103 |
+|    Minimum number of control sets                        |   103 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   289 |
+| Unused register locations in slices containing registers |   285 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,10 +39,10 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |   102 |
+| Total control sets |   103 |
 | >= 0 to < 4        |    25 |
 | >= 4 to < 6        |    13 |
-| >= 6 to < 8        |     2 |
+| >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     4 |
 | >= 12 to < 14      |     0 |
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             243 |          122 |
+| No           | No                    | No                     |             243 |          105 |
 | No           | No                    | Yes                    |              18 |            7 |
-| No           | Yes                   | No                     |             229 |           71 |
-| Yes          | No                    | No                     |            1115 |          452 |
-| Yes          | No                    | Yes                    |              43 |           15 |
-| Yes          | Yes                   | No                     |             295 |          108 |
+| No           | Yes                   | No                     |             229 |           83 |
+| Yes          | No                    | No                     |            1113 |          516 |
+| Yes          | No                    | Yes                    |              43 |           16 |
+| Yes          | Yes                   | No                     |             301 |          105 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,6 +73,8 @@ Table of Contents
 +--------------------------------------+---------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
 |             Clock Signal             |                      Enable Signal                      |                   Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
 +--------------------------------------+---------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+|  uart_debug/tx_module/mytxclk/clkout |                                                         |                                                     |                1 |              1 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_buf[9]_i_1_n_0                  |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_buf[8]_i_1_n_0                  |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_buf[7]_i_1_n_0                  |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_buf[6]_i_1_n_0                  |                                                     |                1 |              1 |         1.00 |
@@ -84,97 +86,96 @@ Table of Contents
 |  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_buf[0]_i_1_n_0                  |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[9]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[8]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[4]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[7]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[5]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[6]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[3]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_buf[9]_i_1_n_0                  |                                                     |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[2]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[4]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[1]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[0]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[6]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[3]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[2]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/buffer[7]_i_1_n_0        |                                                     |                1 |              1 |         1.00 |
 |  uart_debug/tx_module/mytxclk/clkout | uart_debug/tx_module/tx_busy                            | uart_debug/tx_module/tx_ready                       |                1 |              1 |         1.00 |
-|  uart_debug/tx_module/mytxclk/clkout |                                                         |                                                     |                1 |              1 |         1.00 |
 |  mycpuclk/inst/clk_out1              | uart_debug/rst_cnt                                      | uart_debug/rst_cnt[7]_i_1_n_0                       |                1 |              2 |         2.00 |
-|  clock0_BUFG                         |                                                         |                                                     |                1 |              3 |         3.00 |
+|  clock0_BUFG                         |                                                         |                                                     |                2 |              3 |         1.50 |
 |  debug_SSD/seg7_clk_gen_2/CLK        |                                                         |                                                     |                1 |              3 |         3.00 |
 |  mycpuclk/inst/clk_out1              | uart_debug/tx_tail[3]_i_1_n_0                           | rst_IBUF                                            |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_count                           | uart_debug/rx_module/rx_data[7]_i_1_n_0             |                1 |              4 |         4.00 |
-|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/dot_x_addr_0                      | rst_IBUF                                            |                1 |              4 |         4.00 |
 |  mycpuclk/inst/clk_out1              | uart_debug/tx_module/tx_send                            | rst_IBUF                                            |                1 |              4 |         4.00 |
 |  mycpuclk/inst/clk_out1              | uart_debug/instdata[3]_i_1_n_0                          |                                                     |                3 |              4 |         1.33 |
+|  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_count                           | uart_debug/rx_module/rx_data[7]_i_1_n_0             |                1 |              4 |         4.00 |
 |  mycpuclk/inst/clk_out1              | uart_debug/rx_head[0]_i_1_n_0                           | rst_IBUF                                            |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/sampling                 | rst_IBUF                                            |                1 |              4 |         4.00 |
 |  uart_debug/tx_module/mytxclk/clkout |                                                         | uart_debug/tx_module/tx_count_0                     |                1 |              4 |         4.00 |
-|  uart_debug/clka_BUFG                |                                                         |                                                     |                1 |              4 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/E[0]                     | rst_IBUF                                            |                1 |              5 |         5.00 |
-|  mycpuclk/inst/clk_out1              | uart_debug/rst_cnt                                      |                                                     |                2 |              5 |         2.50 |
-|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/ch_y_addr[4]_i_1_n_0              | rst_IBUF                                            |                1 |              5 |         5.00 |
+|  uart_debug/clka_BUFG                |                                                         |                                                     |                2 |              4 |         2.00 |
+|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/dot_x_addr_0                      | rst_IBUF                                            |                1 |              4 |         4.00 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/sampling                 | rst_IBUF                                            |                1 |              4 |         4.00 |
+|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/ch_y_addr[4]_i_1_n_0              | rst_IBUF                                            |                2 |              5 |         2.50 |
+|  mycpuclk/inst/clk_out1              | uart_debug/rst_cnt                                      |                                                     |                3 |              5 |         1.67 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/E[0]                     | rst_IBUF                                            |                2 |              5 |         2.50 |
 |  clock0_BUFG                         | device_keyboard/buffer_read0                            | rst_IBUF                                            |                2 |              5 |         2.50 |
-|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/ch_x_addr[5]_i_1_n_0              | rst_IBUF                                            |                1 |              6 |         6.00 |
+|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/ch_x_addr                         | rst_IBUF                                            |                2 |              6 |         3.00 |
+|  memwrclk_BUFG                       | rv32ip_cpu/seg_ex_0/VGAstate0                           | rv32ip_cpu/seg_ex_0/mem_reg_reg[72]_3               |                2 |              6 |         3.00 |
 | ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      | rv32ip_cpu/seg_if_0/id_reg_reg[34]_0                |                2 |              6 |         3.00 |
 |  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_data[7]_i_2_n_0                 | uart_debug/rx_module/rx_data[7]_i_1_n_0             |                1 |              8 |         8.00 |
 |  mycpuclk/inst/clk_out1              | uart_debug/tx_module/E[0]                               |                                                     |                2 |              8 |         4.00 |
-| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      | rv32ip_cpu/seg_if_0/id_reg_reg[36]_0                |                1 |              8 |         8.00 |
-|  mycpuclk/inst/clk_out2              |                                                         | rst_IBUF                                            |                4 |             10 |         2.50 |
+| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      | rv32ip_cpu/seg_if_0/id_reg_reg[36]_0                |                2 |              8 |         4.00 |
 |  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/y_cnt[9]_i_1_n_0                  | rst_IBUF                                            |                4 |             10 |         2.50 |
-|  uart_debug/tx_module/mytxclk/clkout | uart_debug/tx_module/tx_buf[9]_i_1_n_0                  |                                                     |                2 |             10 |         5.00 |
-| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      | rv32ip_cpu/seg_if_0/id_reg_reg[63]_0                |                7 |             11 |         1.57 |
-|  CLK100MHZ_IBUF_BUFG                 |                                                         | rst_IBUF                                            |                5 |             14 |         2.80 |
-|  mycpuclk/inst/clk_out1              | uart_debug/instcnt[15]_i_1_n_0                          |                                                     |                6 |             16 |         2.67 |
-|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/fifo_reg_0_7_0_5_i_1_n_0 |                                                     |                2 |             16 |         8.00 |
+|  mycpuclk/inst/clk_out2              |                                                         | rst_IBUF                                            |                4 |             10 |         2.50 |
+|  uart_debug/tx_module/mytxclk/clkout | uart_debug/tx_module/tx_buf[9]_i_1_n_0                  |                                                     |                3 |             10 |         3.33 |
+| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      | rv32ip_cpu/seg_if_0/id_reg_reg[63]_0                |                5 |             11 |         2.20 |
+|  CLK100MHZ_IBUF_BUFG                 |                                                         | rst_IBUF                                            |                6 |             14 |         2.33 |
+| ~clock0_BUFG                         |                                                         | rv32ip_cpu/seg_mem_0/wb_reg[63]_i_1_n_0             |                8 |             16 |         2.00 |
+|  memwrclk_BUFG                       | rv32ip_cpu/seg_ex_0/VGAstate0                           |                                                     |                6 |             16 |         2.67 |
 |  mycpuclk/inst/clk_out1              | uart_debug/rx_module/p_0_in0_in                         |                                                     |                2 |             16 |         8.00 |
+|  mycpuclk/inst/clk_out1              | uart_debug/instcnt[15]_i_1_n_0                          |                                                     |                6 |             16 |         2.67 |
 |  mycpuclk/inst/clk_out1              | uart_debug/tx_buf__0                                    |                                                     |                2 |             16 |         8.00 |
-| ~clock0_BUFG                         |                                                         | rv32ip_cpu/seg_mem_0/wb_reg[63]_i_1_n_0             |                7 |             16 |         2.29 |
-|  clock0_BUFG                         | device_keyboard/buffer_read0                            | rv32ip_cpu/seg_ex_0/SR[0]                           |                4 |             16 |         4.00 |
+|  clock0_BUFG                         | device_keyboard/buffer_read0                            | rv32ip_cpu/seg_ex_0/SR[0]                           |                6 |             16 |         2.67 |
+|  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/fifo_reg_0_7_0_5_i_1_n_0 |                                                     |                2 |             16 |         8.00 |
 |  CLK100MHZ_IBUF_BUFG                 | device_keyboard/ps2_keyboard_0/p_0_in0_out              |                                                     |                2 |             16 |         8.00 |
-|  memwrclk_BUFG                       | rv32ip_cpu/seg_ex_0/E[0]                                |                                                     |                5 |             18 |         3.60 |
-|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/dot_y_addr[3]_i_1_n_0             | rst_IBUF                                            |                8 |             18 |         2.25 |
-| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      |                                                     |               11 |             20 |         1.82 |
-|  memwrclk_BUFG                       | rv32ip_cpu/seg_ex_0/mem_reg_reg[21]_0[0]                |                                                     |                7 |             22 |         3.14 |
+|  mycpuclk/inst/clk_out2              | device_VGA/vga_ctrl_0/dot_y_addr[3]_i_1_n_0             | rst_IBUF                                            |                7 |             18 |         2.57 |
+| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      |                                                     |               10 |             20 |         2.00 |
+|  memwrclk_BUFG                       | rv32ip_cpu/seg_ex_0/E[0]                                |                                                     |                6 |             22 |         3.67 |
 |  mycpuclk/inst/clk_out1              | uart_debug/instdata[3]_i_1_n_0                          | uart_debug/instdata[31]_i_1_n_0                     |                7 |             28 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_3[0]                |                                                     |               13 |             32 |         2.46 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_0[0]                |                                                     |               16 |             32 |         2.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_4[0]                |                                                     |               18 |             32 |         1.78 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_9[0]                |                                                     |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/E[0]                               |                                                     |               18 |             32 |         1.78 |
-| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_2                      | uart_debug/cpureset_reg_0                           |                7 |             32 |         4.57 |
-|  clock0_BUFG                         |                                                         | device_timer//dataout[31]_i_1_n_0                   |                8 |             32 |         4.00 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_4[0]                |                                                     |               16 |             32 |         2.00 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/E[0]                               |                                                     |               24 |             32 |         1.33 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_6[0]                |                                                     |               23 |             32 |         1.39 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_5[0]                |                                                     |               11 |             32 |         2.91 |
+| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_2                      | uart_debug/cpureset_reg_0                           |                6 |             32 |         5.33 |
 |  CLK100MHZ_IBUF_BUFG                 |                                                         | uart_debug/tx_module/mytxclk/clkcount[0]_i_1__0_n_0 |                8 |             32 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_busy                            | uart_debug/rx_module/mytxclk/clkcount[0]_i_1_n_0    |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_19[0]               |                                                     |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[68]_0[0]                |                                                     |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_1[0]                |                                                     |               12 |             32 |         2.67 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_2[0]                |                                                     |                9 |             32 |         3.56 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_1[0]                |                                                     |               18 |             32 |         1.78 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_10[0]               |                                                     |                7 |             32 |         4.57 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_11[0]               |                                                     |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_12[0]               |                                                     |               13 |             32 |         2.46 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_13[0]               |                                                     |               17 |             32 |         1.88 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_14[0]               |                                                     |               15 |             32 |         2.13 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_15[0]               |                                                     |               17 |             32 |         1.88 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_16[0]               |                                                     |               18 |             32 |         1.78 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_17[0]               |                                                     |               13 |             32 |         2.46 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_18[0]               |                                                     |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_8[0]                |                                                     |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_20[0]               |                                                     |                8 |             32 |         4.00 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_7[0]                |                                                     |               11 |             32 |         2.91 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_6[0]                |                                                     |               15 |             32 |         2.13 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_5[0]                |                                                     |               13 |             32 |         2.46 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_4[0]                |                                                     |               11 |             32 |         2.91 |
 |  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_3[0]                |                                                     |               13 |             32 |         2.46 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_24[0]               |                                                     |               20 |             32 |         1.60 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_23[0]               |                                                     |               19 |             32 |         1.68 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_22[0]               |                                                     |               12 |             32 |         2.67 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_21[0]               |                                                     |               10 |             32 |         3.20 |
-|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_2[0]                |                                                     |               10 |             32 |         3.20 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_24[0]               |                                                     |               19 |             32 |         1.68 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_7[0]                |                                                     |                5 |             32 |         6.40 |
+|  clock0_BUFG                         |                                                         | device_timer//dataout[31]_i_1_n_0                   |                7 |             32 |         4.57 |
+|  CLK100MHZ_IBUF_BUFG                 | uart_debug/rx_module/rx_busy                            | uart_debug/rx_module/mytxclk/clkcount[0]_i_1_n_0    |                8 |             32 |         4.00 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_1[0]                |                                                     |               17 |             32 |         1.88 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_8[0]                |                                                     |               10 |             32 |         3.20 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_9[0]                |                                                     |               18 |             32 |         1.78 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_2[0]                |                                                     |                9 |             32 |         3.56 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_19[0]               |                                                     |               14 |             32 |         2.29 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_18[0]               |                                                     |               11 |             32 |         2.91 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_17[0]               |                                                     |               12 |             32 |         2.67 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_16[0]               |                                                     |               14 |             32 |         2.29 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_15[0]               |                                                     |               20 |             32 |         1.60 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_14[0]               |                                                     |               14 |             32 |         2.29 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_13[0]               |                                                     |               14 |             32 |         2.29 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_12[0]               |                                                     |               16 |             32 |         2.00 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_11[0]               |                                                     |               11 |             32 |         2.91 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_10[0]               |                                                     |                8 |             32 |         4.00 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_2[0]                |                                                     |                9 |             32 |         3.56 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_23[0]               |                                                     |               17 |             32 |         1.88 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_20[0]               |                                                     |               16 |             32 |         2.00 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_21[0]               |                                                     |               19 |             32 |         1.68 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[70]_22[0]               |                                                     |               14 |             32 |         2.29 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[68]_0[0]                |                                                     |               19 |             32 |         1.68 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_0[0]                |                                                     |               17 |             32 |         1.88 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_1[0]                |                                                     |               12 |             32 |         2.67 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_3[0]                |                                                     |               23 |             32 |         1.39 |
+|  clock0_BUFG                         | rv32ip_cpu/seg_mem_0/wb_reg_reg[67]_4[0]                |                                                     |               12 |             32 |         2.67 |
 |  mycpuclk/inst/clk_out1              |                                                         |                                                     |               20 |             47 |         2.35 |
-| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      | rv32ip_cpu/seg_ex_0/cpureset_reg                    |               17 |             50 |         2.94 |
+| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_0                      | rv32ip_cpu/seg_ex_0/cpureset_reg                    |               16 |             50 |         3.12 |
 |  clk                                 |                                                         | rst_IBUF                                            |               16 |             64 |         4.00 |
-|  CLK100MHZ_IBUF_BUFG                 |                                                         |                                                     |               22 |             66 |         3.00 |
-| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_2                      | rv32ip_cpu/seg_ex_0/cpureset_reg_1                  |               44 |             71 |         1.61 |
-| ~clock0_BUFG                         |                                                         | rv32ip_cpu/seg_ex_0/flushEX                         |               29 |             75 |         2.59 |
-| ~clock0_BUFG                         |                                                         |                                                     |               76 |            119 |         1.57 |
+|  CLK100MHZ_IBUF_BUFG                 |                                                         |                                                     |               21 |             66 |         3.14 |
+| ~clock0_BUFG                         | rv32ip_cpu/seg_ex_0/cpureset_reg_2                      | rv32ip_cpu/seg_ex_0/cpureset_reg_1                  |               39 |             71 |         1.82 |
+| ~clock0_BUFG                         |                                                         | rv32ip_cpu/seg_ex_0/flushEX                         |               40 |             75 |         1.88 |
+| ~clock0_BUFG                         |                                                         |                                                     |               58 |            119 |         2.05 |
 +--------------------------------------+---------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
 
 

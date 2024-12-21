@@ -1,10 +1,54 @@
 Vivado Simulator 2020.2
 Time resolution is 1 ps
-time=         1
-time=         2
-time=         3
-time=         4
-time=         5
-time=         6
-time=         7
-$stop called at time : 7060 ns : File "/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sim_1/new/timer_test.v" Line 50
+Block Memory Generator module VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+blk_mem_gen_v8_4_4 collision detected at time: 75000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 85000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 95000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 105000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 115000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 125000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 135000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 345000, Instance: VGA_test.VGA_for_test.ch_video_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 355000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 365000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 375000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 385000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 395000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 405000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 415000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 625000, Instance: VGA_test.VGA_for_test.color_memory.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+start_line = 0x00
+cursor_y = 0x12
+cursor_x = 0x13
+Data in charactor memory:
+H at 0x00000000
+01 at 0x00000000
+e at 0x00000001
+02 at 0x00000001
+l at 0x00000002
+03 at 0x00000002
+l at 0x00000003
+04 at 0x00000003
+o at 0x00000004
+05 at 0x00000004
+, at 0x00000005
+06 at 0x00000005
+  at 0x00000006
+07 at 0x00000006
+w at 0x00000007
+08 at 0x00000007
+o at 0x00000008
+09 at 0x00000008
+r at 0x00000009
+0a at 0x00000009
+l at 0x0000000a
+0b at 0x0000000a
+d at 0x0000000b
+0c at 0x0000000b
+! at 0x0000000c
+0d at 0x0000000c
+0e at 0x0000000d
+cursor_y = 0x12
+cursor_x = 0x13
+$stop called at time : 3375 ns : File "/home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sim_1/new/VGA_test.v" Line 122

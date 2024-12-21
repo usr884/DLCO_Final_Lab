@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
@@ -88,8 +89,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_1/test_hello.coe
+add_files /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_1/test_color.coe
 add_files /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_1/main.coe
-add_files /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_0/main_d.coe
+add_files /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_0/main_d1.coe
 read_verilog -library xil_defaultlib {
   /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/LED.v
   /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/new/SSD.v
@@ -121,6 +123,9 @@ read_verilog -library xil_defaultlib {
 }
 read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci
 set_property used_in_implementation false [get_files -all /home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2_ooc.xdc]
+
+read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3.xci
+set_property used_in_implementation false [get_files -all /home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3_ooc.xdc]
 
 read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all /home/user/DLCO/lab12/Computer_System/Computer_System.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]

@@ -45,11 +45,13 @@ module VGA(
     wire valid;
     wire [7:0] doutb;
     wire [7:0] ascii;
+    wire [7:0] ch_color, ch_color_true;
     wire VGAstate_addr_valid;
     wire VGAstate_wrvalid;
     wire [31:0] VGAstate_wrdata;
     wire [31:0] chmem_wrdata;
-    wire chmem_addr_valid;
+    wire chmem_addr_valid1;
+    wire chmem_addr_valid2;
     wire chmem_wrvalid;
     reg [3:0] chmem_wea;
     wire cursor_clk;
@@ -59,9 +61,11 @@ module VGA(
     wire [3:0] dot_y_addr;
     wire [3:0] vga_r, vga_g, vga_b;
     wire hsync, vsync;
+    wire [3:0] ch_color_front, ch_color_back;
+    wire [11:0] front, back;
 
     reg [31:0] VGAstate;
-    assign VGAstate_addr_valid = (wraddr[31:2] == {28'h0020100, 2'b00}) ? 1'b1 : 1'b0;
+    assign VGAstate_addr_valid = (wraddr[31:2] == {28'h0020000, 2'b00}) ? 1'b1 : 1'b0;
     write_32bit VGAstate_write(.memop(memop), .wraddr(wraddr[1:0]), .datain(datain), .datapre(VGAstate), .wrvalid(VGAstate_wrvalid), 
         .wrdata(VGAstate_wrdata));
     always @ (posedge wrclk) begin
@@ -70,9 +74,14 @@ module VGA(
         end
     end
 
-    blk_mem_gen_2 ch_video_memory(.addra(wraddr[11:2]), .clka(wrclk), .dina(chmem_wrdata), .ena(chmem_addr_valid && chmem_wrvalid && we), 
+    blk_mem_gen_2 ch_video_memory(.addra(wraddr[11:2]), .clka(wrclk), .dina(chmem_wrdata), .ena(chmem_addr_valid1 && chmem_wrvalid && we), 
         .wea(chmem_wea), .addrb(ch_addr), .clkb(video_mem_rdclk), .doutb(doutb), .enb(1'b1));
-    assign chmem_addr_valid = (wraddr[31:12] == 20'h00200) ? 1'b1 : 1'b0;
+    assign chmem_addr_valid1 = (wraddr[31:12] == 20'h00201) ? 1'b1 : 1'b0;
+
+    blk_mem_gen_3 color_memory(.addra(wraddr[11:2]), .clka(wrclk), .dina(chmem_wrdata), .ena(chmem_addr_valid2 && chmem_wrvalid && we), 
+        .wea(chmem_wea), .addrb(ch_addr), .clkb(video_mem_rdclk), .doutb(ch_color), .enb(1'b1));
+    assign chmem_addr_valid2 = (wraddr[31:12] == 20'h00202) ? 1'b1 : 1'b0;
+
     write_32bit chmem_write(.memop(memop), .wraddr(wraddr[1:0]), .datain(datain), .datapre(32'b0), .wrvalid(chmem_wrvalid), 
         .wrdata(chmem_wrdata));
     always @ * begin
@@ -119,8 +128,15 @@ module VGA(
     vga_font vga_font_0(.ascii(ascii), .row(dot_y_addr), .col(dot_x_addr), .is_white(is_white));
 
     assign ch_addr = {start_line + {1'b0, ch_y_addr}, ch_x_addr};
-    assign ascii = (ch_addr == {cursor_y, cursor_x} && cursor_clk) ? 8'h16 : doutb;
-    assign vga_data1 = is_white ? 12'hfff : 12'b0;
+    assign ascii = (ch_addr == {cursor_y, cursor_x} && cursor_clk && (VGAstate[15:8] != 8'hff || VGAstate[23:16] != 8'hff)) ? 8'h16 : doutb;
+    assign ch_color_true = (ch_addr == {cursor_y, cursor_x} && cursor_clk) ? 8'h07 : ch_color;
+
+    //assign vga_data1 = is_white ? 12'hfff : 12'b0;
+    assign ch_color_front = ch_color_true[3] ? ch_color_true[6:4] : ch_color_true[2:0];
+    assign ch_color_back = ch_color_true[3] ? ch_color_true[2:0] : ch_color_true[6:4];
+    assign front = (ch_color_true[7] && cursor_clk) ? 12'h000 : {{4{ch_color_front[2]}}, {4{ch_color_front[1]}}, {4{ch_color_front[0]}}};
+    assign back = (ch_color_true[7] && cursor_clk) ? 12'h000 : {{4{ch_color_back[2]}}, {4{ch_color_back[1]}}, {4{ch_color_back[0]}}};
+    assign vga_data1 = is_white ? front : back;
     assign vga_data = valid ? vga_data1 : 12'b0;
     
     assign VGA_R = vga_r;

@@ -139,6 +139,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/Top_Module.dcp
   read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci
+  read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3.xci
   read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
   read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
   read_ip -quiet /home/user/DLCO/lab12/Computer_System/Computer_System.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci

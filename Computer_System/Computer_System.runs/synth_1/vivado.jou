@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Dec 18 11:55:12 2024
-# Process ID: 31013
+# Start of session at: Sat Dec 21 17:26:39 2024
+# Process ID: 239132
 # Current directory: /home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1
 # Command line: vivado -log Top_Module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Module.tcl
 # Log file: /home/user/DLCO/lab12/Computer_System/Computer_System.runs/synth_1/Top_Module.vds
